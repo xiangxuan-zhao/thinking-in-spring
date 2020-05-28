@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class AnnotationApplicationContextAsIocContainer {
     public static void main(String[] args) {
-        //
+        //创建BeanFactory容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         //将当前类AnnotationApplicationContextAsIocContainer作为配置类
         applicationContext.register(AnnotationApplicationContextAsIocContainer.class);
