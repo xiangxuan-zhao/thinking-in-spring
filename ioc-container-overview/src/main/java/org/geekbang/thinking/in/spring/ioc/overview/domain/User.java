@@ -67,6 +67,12 @@ public class User  {
     public void setName(String name) {
         this.name = name;
     }
+    public static User createUser(){
+        User user = new User();
+        user.setId(100L);
+        user.setName("突破");
+        return user;
+    }
 
     @Override
     public String toString() {
