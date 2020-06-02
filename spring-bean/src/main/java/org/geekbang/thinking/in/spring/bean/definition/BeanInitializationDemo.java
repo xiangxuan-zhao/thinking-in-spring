@@ -1,20 +1,30 @@
 package org.geekbang.thinking.in.spring.bean.definition;
 
+import org.geekbang.thinking.in.spring.bean.factory.DefaultUserFactoryImpl;
+import org.geekbang.thinking.in.spring.bean.factory.UserFactory;
 import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 /**
- * @author xiangxuan
- * @date 2020/5/30
+ * @author Administrator
+ * @date 2020/06/02
  */
 public class BeanInitializationDemo {
     public static void main(String[] args) {
-        BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INFO/bean-initialization-context.xml");
-        User userByStaticMethod = beanFactory.getBean("user-by-static-method", User.class);
-        User userByInstanceMethod = beanFactory.getBean("user-by-instance-method",User.class);
-        System.out.println(userByStaticMethod);
-        System.out.println(userByInstanceMethod);
-        System.out.println(userByStaticMethod == userByInstanceMethod);
+        //创建BeanFactory容器
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        //注册 Configuration class(配置类)
+        applicationContext.register(BeanInitializationDemo.class);
+        //启动spring应用上下文
+        applicationContext.refresh();
+        //获取实例
+        UserFactory userFactory = applicationContext.getBean(UserFactory.class);
+        //关闭spring 应用上下文
+        applicationContext.close();
+    }
+    @Bean
+    public UserFactory user(){
+        return new DefaultUserFactoryImpl();
     }
 }
