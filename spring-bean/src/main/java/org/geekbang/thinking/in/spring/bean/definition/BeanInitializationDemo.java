@@ -2,7 +2,6 @@ package org.geekbang.thinking.in.spring.bean.definition;
 
 import org.geekbang.thinking.in.spring.bean.factory.DefaultUserFactoryImpl;
 import org.geekbang.thinking.in.spring.bean.factory.UserFactory;
-import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 
