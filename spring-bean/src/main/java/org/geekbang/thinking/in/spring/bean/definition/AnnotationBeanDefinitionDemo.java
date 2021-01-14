@@ -14,7 +14,7 @@ import org.springframework.util.StringUtils;
  * @author Administrator
  * @date 2020/05/28
  */
-@Import(AnnotationBeanDefinitionDemo.Config.class)//通过import 导入
+@Import(AnnotationBeanDefinitionDemo.Config.class)
 public class AnnotationBeanDefinitionDemo {
     public static void main(String[] args) {
         //创建BeanFactory容器
@@ -37,8 +37,8 @@ public class AnnotationBeanDefinitionDemo {
 
     /**
      * 命名Bean 注册方式
-     * @param definitionRegistry
-     * @param beanName
+     * @param definitionRegistry bean定义 注册
+     * @param beanName bean名称
      */
     public static void registerUserBeanDefinition(BeanDefinitionRegistry definitionRegistry, String beanName){
         BeanDefinitionBuilder definitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(User.class);
@@ -56,7 +56,7 @@ public class AnnotationBeanDefinitionDemo {
     }
 
     /**
-     * 2.定义当前类为作为spring bean
+     * 2.定义当前类作为spring bean
      */
     @Component
     public static class Config{

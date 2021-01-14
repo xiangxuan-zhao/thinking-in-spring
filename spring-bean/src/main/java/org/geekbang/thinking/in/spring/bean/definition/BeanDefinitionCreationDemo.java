@@ -17,7 +17,7 @@ public class BeanDefinitionCreationDemo {
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(User.class);
         //属性设置
         beanDefinitionBuilder.addPropertyValue("id",11);
-        beanDefinitionBuilder.addPropertyValue("name","小熊");
+        beanDefinitionBuilder.addPropertyValue("name","xx");
         //获取BeanDefinition实例
         BeanDefinition beanDefinition = beanDefinitionBuilder.getBeanDefinition();
         //BeanDefinition 不是终态，可以修改
@@ -29,7 +29,7 @@ public class BeanDefinitionCreationDemo {
 
         MutablePropertyValues propertyValues = new MutablePropertyValues();
         propertyValues.add("id",11)
-        .add("name","小熊");
+        .add("name","xx");
 
         genericBeanDefinition.setPropertyValues(propertyValues);
     }
