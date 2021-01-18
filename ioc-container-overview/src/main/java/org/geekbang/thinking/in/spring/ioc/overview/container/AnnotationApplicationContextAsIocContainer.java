@@ -18,6 +18,7 @@ public class AnnotationApplicationContextAsIocContainer {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         //将当前类AnnotationApplicationContextAsIocContainer作为配置类
         applicationContext.register(AnnotationApplicationContextAsIocContainer.class);
+        //启动应用上下文
         applicationContext.refresh();
         //依赖查找
         lookupCollectionByType(applicationContext);
@@ -26,8 +27,8 @@ public class AnnotationApplicationContextAsIocContainer {
     @Bean
     public User user(){
         User user = new User();
-        user.setId(11L);
-        user.setName("小欧");
+        user.setId(21L);
+        user.setName("Nolan");
         return user;
     }
 

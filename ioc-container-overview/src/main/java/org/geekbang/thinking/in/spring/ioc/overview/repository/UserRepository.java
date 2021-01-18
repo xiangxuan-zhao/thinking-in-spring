@@ -13,8 +13,14 @@ import java.util.Collection;
  * @date 2020/05/27
  */
 public class UserRepository {
+    /**
+     * 自定义bean
+     */
     private Collection<User> users;
 
+    /**
+     * 容器内建依赖 非spring bean
+     */
     private BeanFactory beanFactory;
 
     private ApplicationContext applicationContext;
@@ -38,9 +44,6 @@ public class UserRepository {
     public void setUserObjectFactory(ObjectFactory<User> userObjectFactory) {
         this.userObjectFactory = userObjectFactory;
     }
-
-// private ObjectFactory<User> userObjectFactory;
-
 
     public ObjectFactory<ApplicationContext> getObjectFactory() {
         return objectFactory;

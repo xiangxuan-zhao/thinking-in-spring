@@ -18,7 +18,8 @@ public class BeanFactoryAsIocContainerDemo {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         //加载配置
-        reader.loadBeanDefinitions("classpath:/META-INFO/dependency-lookup-context.xml");
+        int definitons = reader.loadBeanDefinitions("classpath:/META-INFO/dependency-lookup-context.xml");
+        System.out.println(definitons);
         lookupCollectionByType(beanFactory);
     }
 
