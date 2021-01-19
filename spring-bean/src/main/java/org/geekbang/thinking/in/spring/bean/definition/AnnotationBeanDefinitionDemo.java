@@ -20,16 +20,17 @@ public class AnnotationBeanDefinitionDemo {
         //创建BeanFactory容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         //注册 Configuration class(配置类)
+        //applicationContext.register(Config.class);
         applicationContext.register(AnnotationBeanDefinitionDemo.class);
         //通过BeanDefinition注册 API 实现
         //1.命名bean方式
         registerUserBeanDefinition(applicationContext,"name-user");
         //2.非命名bean方式
-        registerUserBeanDefinition(applicationContext);
+        //registerUserBeanDefinition(applicationContext);
         applicationContext.refresh();
 
         System.out.println( "User 类型" + applicationContext.getBeansOfType(User.class));
-        System.out.println( "Config 类型" + applicationContext.getBeansOfType(Config.class));
+        //System.out.println( "Config 类型" + applicationContext.getBeansOfType(Config.class));
 
         //显示关闭Spring应用上下文
         applicationContext.close();
@@ -58,6 +59,13 @@ public class AnnotationBeanDefinitionDemo {
     /**
      * 2.定义当前类作为spring bean
      */
+/*    @Bean(name = {"user","userAlias"})
+    public User user() {
+        User user = new User();
+        user.setId(100L);
+        user.setName("I DO Ye");
+        return user;
+    }*/
     @Component
     public static class Config{
         //通过注解方式定义一个Bean
@@ -66,7 +74,7 @@ public class AnnotationBeanDefinitionDemo {
         public User user(){
             User user = new User();
             user.setId(100L);
-            user.setName("I DO");
+            user.setName("I DO Ye");
             return user;
         }
     }

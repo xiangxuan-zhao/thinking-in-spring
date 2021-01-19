@@ -12,7 +12,7 @@ public class BeanAliasDemo {
     public static void main(String[] args) {
         //配置 xml 配置文件
         //启动 Spring 上下文环境
-        BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INFO/bean-definition-context.xml");
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/bean-definition-context.xml");
         User user = beanFactory.getBean("user",User.class);
         User aliasUser = beanFactory.getBean("xiangxuan-user",User.class);
         System.out.println(user == aliasUser);

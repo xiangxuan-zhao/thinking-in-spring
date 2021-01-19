@@ -1,14 +1,17 @@
-package org.geekbang.thinking.in.spring.bean.definition;
+package org.geekbang.thinking.in.spring.bean.initialization;
 
 import org.geekbang.thinking.in.spring.bean.factory.DefaultUserFactoryImpl;
 import org.geekbang.thinking.in.spring.bean.factory.UserFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
+ * {@link Bean} 的初始化
  * @author Administrator
  * @date 2020/06/02
  */
+//@Configuration
 public class BeanInitializationDemo {
     public static void main(String[] args) {
         //创建BeanFactory容器
@@ -22,7 +25,7 @@ public class BeanInitializationDemo {
         //关闭spring 应用上下文
         applicationContext.close();
     }
-    @Bean
+    @Bean(initMethod = "initUserFactory")
     public UserFactory user(){
         return new DefaultUserFactoryImpl();
     }

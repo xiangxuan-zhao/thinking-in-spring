@@ -7,7 +7,6 @@ import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
  * @date 2020/5/31
  */
 public interface UserFactory {
-
     default User createUser(){
         return User.createUser();
     }
