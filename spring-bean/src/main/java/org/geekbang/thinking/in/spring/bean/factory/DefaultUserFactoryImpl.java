@@ -40,4 +40,9 @@ public class DefaultUserFactoryImpl implements UserFactory, InitializingBean, Di
     public void genricDestroy(){
         System.out.println("自定义 销毁...");
     }
+
+    @Override
+    protected void finalize() {
+        System.out.println(this.getClass().getName() + "正在被回收 ");
+    }
 }
