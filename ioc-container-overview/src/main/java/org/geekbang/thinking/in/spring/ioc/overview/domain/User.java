@@ -17,16 +17,6 @@
 package org.geekbang.thinking.in.spring.ioc.overview.domain;
 
 
-import org.geekbang.thinking.in.spring.ioc.overview.annotation.Super;
-import org.geekbang.thinking.in.spring.ioc.overview.enums.City;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.core.io.Resource;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * 用户类
  *

@@ -1,5 +1,6 @@
 package org.geekbang.thinking.in.spring.ioc.overview.dependency.injection;
 
+
 import org.geekbang.thinking.in.spring.ioc.overview.repository.UserRepository;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;

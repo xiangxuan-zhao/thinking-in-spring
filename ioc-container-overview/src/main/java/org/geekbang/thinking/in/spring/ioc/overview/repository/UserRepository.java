@@ -1,6 +1,5 @@
 package org.geekbang.thinking.in.spring.ioc.overview.repository;
 
-import javafx.application.Application;
 import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
